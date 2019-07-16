@@ -1,24 +1,53 @@
 var db = require("../models");
+const axios = require("axios");
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+module.exports = function (app) {
+
+  app.get("/api/jobs/search", function (req, res) {
+    let queryUrl = "https://jobs.github.com/positions.json?description=" + req.query.title + "&location=" + req.query.location;
+
+    db.Jobs.findOne({
+      where: {
+        title: req.query.title,
+        location: req.query.location
+      }
+    }).then(function (job) {
+      if (job !== null) {
+        db.Jobs.update({
+          searchCount: job.searchCount + 1
+        }, {
+          where: {
+            id: job.id
+          }
+        })
+      } else {
+        db.Jobs.create({
+          title: req.query.title,
+          location: req.query.location
+        });
+      }
+    });
+
+    axios.get(queryUrl).then(function (response) {
+      res.json(response.data);
+    });
+
+  });
+
+  // Post the relevant job searches from the query to the database
+  app.post("/api/results", function (req, res) {
+    db.jobs.create(req.body).then(function (data) {
+      res.json(data);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Get all 
+  app.get("/api/", function (req, res) {
+    db.Example.findAll({}).then(function (data) {
+      res.json(data);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+
+
 };
