@@ -93,6 +93,10 @@ app.post("/api/fav",function(req,res){
         }
     });
 });
+//give back all the states
+app.get("/api/states",function(req,res){
+    //
+});
 
 
 };
