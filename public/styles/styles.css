@@ -1,3 +1,15 @@
 .list-group-item {
   line-height: 2.5;
 }
+#results{
+  padding: 2%;
+}
+#favorites{
+  padding: 3%;
+}
+#jobDetail{
+  padding: 3%;
+}
+#searchTerms{
+  padding: 2%;
+}
