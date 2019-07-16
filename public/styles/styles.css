@@ -34,6 +34,19 @@ h1, .blurb {
   font-family: 'Questrial', sans-serif;
 }
 
-body {
+.background {
   background-image:url("../images/what-the-hex-dark.png");
+}
+
+.search-bar {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.reveal {
+  background-color: whitesmoke;
+}
+
+.button {
+  background-color: deeppink;
 }
