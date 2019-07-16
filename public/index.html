@@ -27,15 +27,16 @@
 
 </head>
 
-<body>
+<body class="background">
     <header>
         <div class="grid-container">
             <div class="large-12 cell">
-                <h1> </h1>
 
+                <!-- LOGO IMAGE -->
                 <img class="logo animated bounceInUp" src="images/laptopcodebgwlogo.png">
 
-                <h4 class="blurb">Make informed career choices with huntWise,<br>a one-stop shop job hunt app for web developers</h4>
+                <h4 class="blurb">Make informed career choices with huntWise,<br>a one-stop shop job hunt app for web
+                    developers</h4>
 
                 <button class="button" data-open="searchModal">BEGIN SEARCH</button>
     </header>
@@ -44,31 +45,26 @@
     <!-- MODAL -->
 
     <div class="reveal" id="searchModal" data-reveal>
-        <form class="search-bar">
-            <div class="grid-container">
-                <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
-                        <label>Job Title
-                            <input class="job-input" type="text" placeholder="ex. Front End Developer">
-                        </label>
-                    </div>
-                    <div class="medium-6 cell">
-                        <label>Location
-                            <input class="location-input" type="text" placeholder="ex. Orlando, FL">
-                        </label>
-                        <button id="search" data-open="exampleModal1" name="action" type="button"
-                            class="button">Submit</button>
 
-                    </div>
-                </div>
-            </div>
+        <!-- SEARCH FORM -->
+        <form class="search-bar animated flipInX">
+            <label>Job Title
+                <input class="job-input" type="text" placeholder="ex. Front End Developer">
+            </label>
+
+            <label>Location
+                <input class="location-input" type="text" placeholder="ex. Orlando, FL">
+            </label>
+            <button id="search" name="action" type="button" class="button">Submit</button>
+
+
         </form>
     </div>
 
-
+    <!-- EXTERNAL JS -->
     <script src="js/index.js"></script>
 
-    <!-- MODAL SCRIPT -->
+    <!-- MODAL INITIALIZE -->
     <script>
         $(document).ready(function () {
             $(document).foundation();
