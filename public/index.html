@@ -1,40 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hunt Wise</title>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+
+    <title>huntWise</title>
+
+    <!-- FOUNDATION CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/623c9b3b2b.js"></script>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+
 </head>
 
 <body>
+    <header>
+        <div class="grid-container">
+            <div class="large-12 cell">
+                <h1>huntWise</h1>
 
-  <!-- SPLASH IMAGE -->
-  <img src="images/dbdbdb.png">
+                <img class="logo" src="images/dbdbdb.png">
 
-  <!-- SEARCH FORM -->
+                <h4 class="blurb">Make informed career choices with huntWise, a one-stop shop job hunt app</h4>
 
-  <form class="search-bar">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
-          <label>Job Title
-            <input class="job-input" type="text" placeholder="ex. Front End Developer">
-          </label>
-        </div>
-        <div class="medium-6 cell">
-          <label>Location
-            <input class="location-input" type="text" placeholder="ex. Orlando, FL">
-          </label>
-          <button id="search" name="action" type="button" class="button">Submit</button>
-        </div>
-      </div>
+                <button class="button" data-open="exampleModal1">Click me for a modal</button>
+    </header>
+
+
+    <!-- MODAL -->
+
+    <div class="reveal" id="exampleModal1" data-reveal>
+        <form class="search-bar">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-6 cell">
+                        <label>Job Title
+                            <input class="job-input" type="text" placeholder="ex. Front End Developer">
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Location
+                            <input class="location-input" type="text" placeholder="ex. Orlando, FL">
+                        </label>
+                        <button id="search" data-open="exampleModal1" name="action" type="button"
+                            class="button">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-  </form>
 
-  <script src="js/index.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <!-- MODAL SCRIPT -->
+    <script>
+        $(document).ready(function () {
+            $(document).foundation();
+        })
+    </script>
+
 </body>
 
 </html>
