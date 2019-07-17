@@ -1,6 +1,4 @@
 $(function () {
-
-
     $.get('api/jobs/search' + location.search).then(function (data) {
         console.log(data);
 
@@ -9,7 +7,6 @@ $(function () {
         if (data.length < 10) {
             limit = data.length;
         }
-
         const resultsDiv = $("#results");
 
         resultsDiv.empty();
@@ -34,10 +31,7 @@ $(function () {
                         .append(location)
                         .append(jobDetails)
                 });
-
             resultsDiv.append(jobDiv);
-
-
         }
     });
 });
