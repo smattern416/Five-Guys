@@ -3,15 +3,18 @@
 }
 #results{
   padding: 2%;
+  font-family: 'Questrial', sans-serif;
 }
 #favorites{
   padding: 3%;
 }
 #jobDetail{
   padding: 3%;
+  font-family: 'Questrial', sans-serif;
 }
 #searchTerms{
   padding: 2%;
+
 }
 
 header {
@@ -30,7 +33,7 @@ header {
   border-radius: 4px;
 }
 
-h1, .blurb {
+h1, h2, .blurb {
   font-family: 'Questrial', sans-serif;
 }
 
