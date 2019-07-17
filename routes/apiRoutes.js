@@ -101,7 +101,7 @@ app.get("/api/mostFav",function(req,res){
     res.json(results);
   });
 });
-app.post("/api/fav",function(req,res){
+app.post("/api/fav/:id",function(req,res){
     //update fav count here
 
     //use increment to add 1 to col
@@ -109,7 +109,7 @@ app.post("/api/fav",function(req,res){
       `favCount`,
       {
       where : {
-        id : req.body.id
+        jobId : req.params.id
       }
     }).then(function(){
         console.log("increment success");
