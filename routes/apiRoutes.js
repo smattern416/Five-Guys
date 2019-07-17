@@ -1,6 +1,6 @@
 var db = require("../models");
 const axios = require("axios");
-
+var sequelize = require("sequelize");
 module.exports = function (app) {
   //main search function  
   //search api for json response and save all the jobs we got from api to our database
@@ -24,9 +24,8 @@ module.exports = function (app) {
           
           if (results != null) {
               //this job exists in our database
-              db.Jobs.update({
-                searchCount : (results.dataValues.searchCount + 1)
-              },
+              db.Jobs.increment(
+                `searchCount`,
                 {
                 where : {
                   jobId : jobs[index].id
@@ -65,43 +64,59 @@ module.exports = function (app) {
 //get most searched jobs
  app.get("/api/mostsearched",function(req,res){
   db.Jobs.findAll({
-    attributes: [[sequelize.fn('COUNT', sequelize.col('searchCount')), 'counts']]//desc or asc
+    //order jobs by searchCount
+    order : [[`searchCount`,`DESC`]]
   }).then(function(results){
-    //res.send(results[0]);
-    // var topFive = [];
-    // for(){
-
-    // }
-    res.send(topFive);
+    //render topfive as json 
+    let topFive = [];
+    for (let index = 0; index < 5; index++) {
+      topFive.push(results[index]);
+    }
+    res.json(topFive);
   });
  });
  //get most searched jobs by location or just location
  app.get("/api/",function(req,res){
 
 });
- //get all faved jobs
+ //get all faved jobs favcount >0
  app.get("/api/favorite",function(req,res){
     db.Jobs.findAll({
       where : {
-        favCount : favCount > 0
+        favCount : {
+          [sequelize.Op.gt] : 0
+        }
       }
     }).then(function(results){
-      res.send(results);
+      res.json(results);
     });
+});
+//order by favCount and search favcount >0 
+app.get("/api/mostFav",function(req,res){
+  db.Jobs.findAll({
+    where : {
+      favCount : {
+        [sequelize.Op.gt] : 0
+      }
+    },
+    order : [[`favCount`,`DESC`]]
+  }).then(function(results){
+    res.json(results);
+  });
 });
 app.post("/api/fav",function(req,res){
     //update fav count here
-    db.Jobs.update({
-      favCount : favCount +1
-    },{
+
+    //use increment to add 1 to col
+    db.Jobs.increment(
+      `favCount`,
+      {
       where : {
         id : req.body.id
       }
-    }).then(function(results){
-        if (results.affectedRows ==1) {
-          console.log("update favscount success");
-          
-        }
+    }).then(function(){
+        console.log("increment success");
+        
     });
 });
 //give back all the states
