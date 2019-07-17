@@ -75,10 +75,6 @@ module.exports = function (app) {
     res.json(topFive);
   });
  });
- //get most searched jobs by location or just location
- app.get("/api/",function(req,res){
-
-});
  //get all faved jobs favcount >0
  app.get("/api/favorite",function(req,res){
     db.Jobs.findAll({

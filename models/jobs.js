@@ -5,8 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     //info to render to show exact faved jobs
     title: DataTypes.STRING,
     type: DataTypes.STRING,
-    city : DataTypes.STRING,
-    state : DataTypes.STRING,
+    location : DataTypes.STRING,
     url : DataTypes.STRING,
     created_at : DataTypes.STRING,
     company : DataTypes.STRING,
