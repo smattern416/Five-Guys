@@ -12,16 +12,19 @@ We began huntWise by researching popular job search API's, having to change our 
 
 * Stack Overflow API
 * Foundation
-* Materialize
-* Handlebars
+* Javascript
+* JQuery
+* Node
+* MySQL
+* Express
 
 ### _Authors_
 
-* Celisse, Front End 
-* Marisa, Front End
-* Nova, Back End
-* Stephanie, Front End 
-* Yagmur, Back End
+* Celisse Dones, Front End, Project Manager
+* Marisa Quijano, Front End
+* Shengyuan "Nova" Xue, Back End
+* Stephanie Mattern, Front End 
+* Yagmur Cetin Tas, Back End
 
 #### Special Thanks
 
