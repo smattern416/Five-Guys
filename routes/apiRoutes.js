@@ -10,40 +10,51 @@ module.exports = function (app) {
     let queryUrl = "https://jobs.github.com/positions.json?description=" + req.query.title + "&location=" + req.query.location;
     axios.get(queryUrl).then(function (response) {
       res.json(response.data);
-
-
-      
       //database side
       //search through database to update or insert 
       var jobs = response.data;
+      console.log(jobs.length);
+      
       for (let index = 0; index < jobs.length; index++) {
         db.Jobs.findOne({
           where : {
             jobId : jobs[index].id
           }
         }).then(function(results){
+          
           if (results != null) {
               //this job exists in our database
               db.Jobs.update({
-                searchCount : searchCount + 1
+                searchCount : (results.dataValues.searchCount + 1)
               },
                 {
                 where : {
                   jobId : jobs[index].id
                 }
-              }).then(function(results){
-                if (results.affectedRows == 1) {
-                  console.log("update success");
-                  
-                }
+              }).then(function(){
+                console.log();
+                
+                console.log("update success");
               });
           }else{
             //new job 
-            db.Jobs.create(jobs[index]).then(function(result){
-              if (results.affectedRows ==1 ) {
-                  console.log("insert success");
-                  
-              }
+            
+            db.Jobs.create({
+              jobId : jobs[index].id,
+              type : jobs[index].type,
+              url : jobs[index].url,
+              created_at : jobs[index].created_at,
+              company : jobs[index].company,
+              company_url : jobs[index].company_url,
+              location : jobs[index].location,
+              title : jobs[index].title,
+              description : jobs[index].description,
+              how_to_apply : jobs[index].how_to_apply,
+              company_logo : jobs[index].company_logo,
+
+            }).then(function(){
+              console.log("insert" + index+ "success");
+              
             });
           }
         });
@@ -97,6 +108,4 @@ app.post("/api/fav",function(req,res){
 app.get("/api/states",function(req,res){
     //
 });
-
-
 };

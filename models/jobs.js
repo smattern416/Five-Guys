@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     company : DataTypes.STRING,
     company_url : DataTypes.STRING,
     description : DataTypes.TEXT,
-    how_to_apply : DataTypes.STRING,
+    how_to_apply : DataTypes.TEXT,
     company_logo : DataTypes.STRING,
     //favedState
     favCount: {

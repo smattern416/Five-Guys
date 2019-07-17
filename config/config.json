@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "huntwise_db",
     "host": "localhost",
     "dialect": "mysql"
