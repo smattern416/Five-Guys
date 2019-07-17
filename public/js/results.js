@@ -22,6 +22,11 @@ $(document).ready(function () {
             let jobDiv = $("<div>").addClass("job");
             let jobId = data[i].id;
             let favButton = $("<button>").addClass("button favs").text("<3 Favorite").attr("value", jobId);
+            favButton.on("click",function(){
+                $.post("api/fav/" + $(this).val()).then (function(data){
+                    console.log(data);
+                });
+            });
             jobDiv.on("click", function () {
                 let jobDetails = $(data[i].description);
                 let newTitle = $("<h1>").text(data[i].title);
@@ -34,10 +39,4 @@ $(document).ready(function () {
             resultsDiv.append(jobDiv);
         }
     });
-
-    $(".favs").on("click", function(){
-        $.post("api/fav/" + $(this).val()).then (function(data){
-            console.log(data);
-        });
-    })
 });
