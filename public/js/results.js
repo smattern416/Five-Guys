@@ -20,11 +20,12 @@ $(document).ready(function () {
             let location = $("<p>").text(data[i].location);
             let divider = $("<hr>");
             let jobDiv = $("<div>").addClass("job");
-            let jobId = data[i].id;
+            let jobId = data[i].id || data[i].jobId;
             let favButton = $("<button>").addClass("button favs").text("<3 Favorite").attr("value", jobId);
             favButton.on("click",function(){
+                console.log($(this).val());
                 $.post("api/fav/" + $(this).val()).then (function(data){
-                    console.log(data);
+                    console.log("after fav click");
                 });
             });
             jobDiv.on("click", function () {
