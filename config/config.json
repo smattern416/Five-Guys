@@ -17,5 +17,13 @@
   "production": {
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
+  },
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "huntwise_db",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3307
   }
 }
