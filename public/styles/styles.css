@@ -1,55 +1,51 @@
 .list-group-item {
   line-height: 2.5;
-}
-#results{
+ }
+ #results{
   padding: 2%;
   font-family: 'Questrial', sans-serif;
-}
-#favorites{
+ }
+ #favorites{
   padding: 3%;
-}
-#jobDetail{
+ }
+ #jobDetail{
   padding: 3%;
   font-family: 'Questrial', sans-serif;
-}
-#searchTerms{
+ }
+ #searchTerms{
   padding: 2%;
-
-}
-
-header {
+ 
+ }
+ 
+ header {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
   width: 70%;
-  background-color: whitesmoke(231, 240, 231);
-  border: solid 5px whitesmoke;
-}
 
-.logo {
   margin-top: 15px;
   margin-bottom: 10px;
   border-radius: 4px;
-}
-
-h1, h2, .blurb {
+ }
+ 
+ h1, h2, .blurb {
   font-family: 'Questrial', sans-serif;
-}
-
-.background {
+ }
+ 
+ .background {
   background-image:url("../images/what-the-hex-dark.png");
-}
-
-.search-bar {
+ }
+ 
+ .search-bar {
   width: 100%;
   margin: 0 auto;
-}
-
-.reveal {
+ }
+ 
+ .reveal {
   background-color: whitesmoke;
-}
-
-.button {
+ }
+ 
+ .button {
   background-color: #3db14b;
-}
+ }
