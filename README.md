@@ -30,6 +30,9 @@ We began huntWise by researching popular job search API's, having to change our 
 
 Special Thanks to the UCF Coding Bootcamp for inspiring us to learn, grow and create. Thank you to our instructors for assisting us along the way, and thanks for coffee... :coffee:
 
+#### _in the beginning..._
+
+![readme](/public/images/readmeuse.jpg)
 
 
  
