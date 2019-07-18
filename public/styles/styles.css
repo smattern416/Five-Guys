@@ -8,6 +8,7 @@
   background-color: white;
   border: solid 5px #d12cbb;
   margin: 3%;
+  
 }
 #favorites{
   padding: 3%;
@@ -27,6 +28,9 @@
   background-color: white;
   border: solid 5px #3db14b;
   margin: 3%;
+}
+#height{
+  padding-bottom: 50px;
 }
 h1{
   font-size: 20px;
@@ -75,6 +79,7 @@ header {
   text-align: center;
   font-size: 8px;
   padding-top: 3%;
+  margin-top: 3%;
 }
 
 .favHeart {
