@@ -7,11 +7,13 @@
   font-size: 10pt;
   background-color: white;
   border: solid 5px #d12cbb;
+  margin: 3%;
 }
 #favorites{
   padding: 3%;
   border: solid 5px #d12cbb;
   background-color: white;
+  margin: 3%;
 }
 #jobDetail{
   padding: 3%;
@@ -24,6 +26,7 @@
   padding: 2%;
   background-color: white;
   border: solid 5px #3db14b;
+  margin: 3%;
 }
 h1{
   font-size: 20px;
@@ -39,7 +42,7 @@ header {
   margin-top: 5%;
   width: 70%;
   background-color: whitesmoke;
-
+}
 
 .logo {
   margin-top: 15px;
