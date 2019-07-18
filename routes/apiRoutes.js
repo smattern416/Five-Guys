@@ -112,7 +112,7 @@ module.exports = function (app) {
           jobId: req.params.id
         }
       }).then(function () {
-      console.log("increment success");
+      res.json("increment success");
 
     });
   });
