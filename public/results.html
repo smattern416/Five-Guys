@@ -2,71 +2,65 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
- <!-- FOUNDATION CDN -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
+  <!-- FOUNDATION CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/vendor/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
 
 
- <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
- <!-- Compressed CSS -->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
-   integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
-   crossorigin="anonymous">
+  
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
+    integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
+    crossorigin="anonymous">
 
-   <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
- <!-- Compressed JavaScript -->
- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
-   integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
-   crossorigin="anonymous"></script>
- <!-- GOOGLE FONTS -->
- <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-   <title>Results</title>
+  <!-- Compressed JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
+    integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
+    crossorigin="anonymous"></script>
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <title>Results</title>
 </head>
 
-<body>
- <nav class="top-bar" data-topbar role="navigation">
-   <ul class="title-area">
-     <li class="name">
-       <h1><a href="#">huntWise Results</a></h1>
-     </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-   </ul>
+<body class="background">
+  <div class="top-bar" data-topbar role="navigation">
+         <img class="top-bar image" src="images/resultsheader.png">
+  </div>
 
+     
+  <div class="grid-y medium-grid-frame">
+    <div class="cell shrink header medium-cell-block-container">
 
-
- </nav>
- <div class="grid-y medium-grid-frame">
-   <div class="cell shrink header medium-cell-block-container">
-
-     <div id="searchTerms" class="grid-x padding-gutters">
-       <div class="cell medium-4">
-         <p> This demo shows what is possible with the new Foundation 6.4 XY Grid</p>
-       </div>
-       <div id="favorites" class="cell medium-8">
-         <p>A medium 4 cell</p>
-       </div>
-     </div>
-   </div>
-   <div class="cell medium-auto medium-cell-block-container">
-     <div class="grid-x grid-padding-x">
-       <div class="cell medium-4 medium-cell-block-y" id="results">
-         <h2>Job Search Results</h2>
-       </div>
-       <div id="jobDetail" class="cell medium-8 medium-cell-block-y">
-         <h2>Detailed Job Description</h2>
-       </div>
-     </div>
-   </div>
- </div>
-
- <script src="js/results.js"></script>
+      <div class="grid-x padding-gutters">
+        <div id="searchTerms" class="cell medium-4">
+          <p>Search Parameters should show up here- maybe an option to adjust your search?</p>
+        </div>
+        <div id="favorites" class="cell medium-8">
+          <p>Favorites data goes here</p>
+        </div>
+      </div>
+    </div>
+    <div class="cell medium-auto medium-cell-block-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell medium-4 medium-cell-block-y" id="results">
+          <p>Job Search Results</p>
+        </div>
+        <div id="jobDetail" class="cell medium-8 medium-cell-block-y">
+          <h2>Detailed Job Description</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/results.js"></script>
 
 </body>
 
