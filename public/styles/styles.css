@@ -23,7 +23,11 @@
   margin-right: auto;
   margin-top: 5%;
   width: 70%;
-
+  background-color: whitesmoke;
+  border: solid 5px #ddd;
+ }
+ 
+ .logo {
   margin-top: 15px;
   margin-bottom: 10px;
   border-radius: 4px;
