@@ -68,3 +68,15 @@ header {
 .button {
   background-color: #3db14b;
 }
+
+.favHeart {
+  background-color: none;
+  color: grey;
+  font-size: 28px;
+}
+
+.pink {
+  background-color: none;
+  color: deeppink;
+  font-size: 28px;
+}

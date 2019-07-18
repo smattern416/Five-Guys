@@ -21,11 +21,13 @@ $(document).ready(function () {
             let divider = $("<hr>");
             let jobDiv = $("<div>").addClass("job");
             let jobId = data[i].id;
-            let favButton = $("<button>").addClass("button favs").text("<3 Favorite").attr("value", jobId);
+            let favButton = $("<button>").addClass("favHeart").html("<i class='far fa-heart'></i>").attr("value", jobId);
             favButton.on("click",function(){
+                console.log("yes")
                 $.post("api/fav/" + $(this).val()).then (function(data){
                     console.log(data);
                 });
+                favButton.toggleClass("pink");
             });
             jobDiv.on("click", function () {
                 let jobDetails = $(data[i].description);
