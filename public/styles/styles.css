@@ -76,3 +76,15 @@ header {
   font-size: 8px;
   padding-top: 3%;
 }
+
+.favHeart {
+  background-color: none;
+  color: grey;
+  font-size: 28px;
+}
+
+.pink {
+  background-color: none;
+  color: deeppink;
+  font-size: 28px;
+}
