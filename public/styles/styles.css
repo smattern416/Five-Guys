@@ -1,23 +1,38 @@
 .list-group-item {
   line-height: 2.5;
- }
- #results{
+}
+#results{
   padding: 2%;
   font-family: 'Questrial', sans-serif;
- }
- #favorites{
+  font-size: 10pt;
+  background-color: white;
+  border: solid 5px #d12cbb;
+}
+#favorites{
   padding: 3%;
- }
- #jobDetail{
+  border: solid 5px #d12cbb;
+  background-color: white;
+}
+#jobDetail{
   padding: 3%;
   font-family: 'Questrial', sans-serif;
- }
- #searchTerms{
+  background-color: white;
+  border: solid 5px #3db14b;
+  margin: 3%;
+}
+#searchTerms{
   padding: 2%;
- 
- }
- 
- header {
+  background-color: white;
+  border: solid 5px #3db14b;
+}
+h1{
+  font-size: 20px;
+}
+h2{
+  font-size: 20px;
+}
+
+header {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -25,31 +40,31 @@
   width: 70%;
   background-color: whitesmoke;
   border: solid 5px #ddd;
- }
- 
- .logo {
+}
+
+.logo {
   margin-top: 15px;
   margin-bottom: 10px;
   border-radius: 4px;
- }
- 
- h1, h2, .blurb {
+}
+
+.blurb {
   font-family: 'Questrial', sans-serif;
- }
- 
- .background {
+}
+
+.background {
   background-image:url("../images/what-the-hex-dark.png");
- }
- 
- .search-bar {
+}
+
+.search-bar {
   width: 100%;
   margin: 0 auto;
- }
- 
- .reveal {
+}
+
+.reveal {
   background-color: whitesmoke;
- }
- 
- .button {
+}
+
+.button {
   background-color: #3db14b;
- }
+}
