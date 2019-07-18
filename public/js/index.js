@@ -3,7 +3,7 @@ $("#search").on("click", function (event) {
 
   let jobTitle = $(".job-input").val().trim();
   let locationInput = $(".location-input").val().trim();
-  if (jobTitle !== "" && locationInput !== "") {
+  if (!(jobTitle == "" && locationInput == "")) {
     window.location = "results.html?title=" + jobTitle + "&location=" + locationInput;
   }
 })
