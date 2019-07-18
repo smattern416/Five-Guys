@@ -20,7 +20,7 @@ $.get('api/jobs/search' + location.search).then(function (data) {
         let divider = $("<hr>");
         let jobDiv = $("<div>").addClass("job");
         let jobId = data[i].id || data[i].jobId;
-        let favButton = $("<button>").addClass("button favs").text("<3 Favorite").attr("value", jobId);
+        let favButton = $("<button>").addClass("favHeart").html("<i class='far fa-heart'></i>").attr("value", jobId);
         jobDiv.on("click", function () {
             let jobDetails = $(data[i].description);
             let newTitle = $("<h1>").text(data[i].title);
@@ -33,9 +33,11 @@ $.get('api/jobs/search' + location.search).then(function (data) {
         resultsDiv.append(jobDiv);
     }
 });
-$(document).on("click",".favs",function(){
+$(document).on("click",".favHeart",function(){
     $.post("/api/fav/"+$(this).val()).then(function(data){
         console.log(data);
-    })
-    
+    });
+
+    $(this).toggleClass("pink");
+
 });
