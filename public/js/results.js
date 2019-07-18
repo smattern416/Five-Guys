@@ -36,7 +36,8 @@ $.get('api/jobs/search' + location.search).then(function (data) {
 $(document).on("click",".favHeart",function(){
     $.post("/api/fav/"+$(this).val()).then(function(data){
         console.log(data);
-        
-    })
+    });
+
     $(this).toggleClass("pink");
+
 });

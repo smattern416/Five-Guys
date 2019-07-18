@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "gexha0ui5ll9pazp",
-    "password": "lzshown6cdl3jeqx",
-    "database": "s1aox28mvynij24h",
-    "host": "l7cup2om0gngra77.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "root",
+    "database": "huntwise_db",
+    "host": "localhost",
     "dialect": "mysql",
     "port": 3306
   },
