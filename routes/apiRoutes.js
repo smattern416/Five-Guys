@@ -65,14 +65,11 @@ module.exports = function (app) {
       //order jobs by searchCount
       order: [
         [`searchCount`, `DESC`]
-      ]
+      ],
+      limit : 5
     }).then(function (results) {
       //render topfive as json 
-      let topFive = [];
-      for (let index = 0; index < 5; index++) {
-        topFive.push(results[index]);
-      }
-      res.json(topFive);
+      res.json(results);
     });
   });
   //get all faved jobs favcount >0
@@ -97,7 +94,8 @@ module.exports = function (app) {
       },
       order: [
         [`favCount`, `DESC`]
-      ]
+      ],
+      limit : 5
     }).then(function (results) {
       res.json(results);
     });

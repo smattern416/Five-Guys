@@ -36,6 +36,6 @@ $.get('api/jobs/search' + location.search).then(function (data) {
 $(document).on("click",".favs",function(){
     $.post("/api/fav/"+$(this).val()).then(function(data){
         console.log(data);
-        
     })
+    
 });
