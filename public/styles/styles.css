@@ -23,8 +23,8 @@ header {
   margin-right: auto;
   margin-top: 5%;
   width: 70%;
-  background-color: whitesmoke;
-  border: solid 5px #ddd;
+  background-color: whitesmoke(231, 240, 231);
+  border: solid 5px whitesmoke;
 }
 
 .logo {
