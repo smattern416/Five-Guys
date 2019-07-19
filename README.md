@@ -10,13 +10,33 @@ We began huntWise by researching popular job search API's, having to change our 
 
 ### _What We Used_
 
-* Stack Overflow API
+* [Github Jobs API](https://jobs.github.com/api)
 * Foundation
 * Javascript
 * JQuery
 * Node
 * MySQL
 * Express
+
+#### _in the beginning..._
+
+![readme](/public/images/readmeuse.jpg)
+
+#### _Opening Page_
+
+![readme](/public/images/index.gif)
+
+### _See the job list and favorite the ones you like_
+
+![readme](/public/images/details-fav.gif)
+
+### _If you want to see other jobs, you can search again_
+
+![readme](/public/images/search-again.gif)
+
+### _You can see the most searched and favorited jobs by the users_
+
+![readme](/public/images/most-searched-fav.gif)
 
 ### _Authors_
 
@@ -29,10 +49,6 @@ We began huntWise by researching popular job search API's, having to change our 
 #### Special Thanks
 
 Special Thanks to the UCF Coding Bootcamp for inspiring us to learn, grow and create. Thank you to our instructors for assisting us along the way, and thanks for coffee... :coffee:
-
-#### _in the beginning..._
-
-![readme](/public/images/readmeuse.jpg)
 
 
  
