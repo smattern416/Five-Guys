@@ -11,7 +11,7 @@ We began huntWise by researching popular job search API's, having to change our 
 ### _What We Used_
 
 * [Github Jobs API](https://jobs.github.com/api)
-* Foundation
+* [Foundation](https://foundation.zurb.com/)
 * Javascript
 * JQuery
 * Node
@@ -22,19 +22,27 @@ We began huntWise by researching popular job search API's, having to change our 
 
 ![readme](/public/images/readmeuse.jpg)
 
-#### _Opening Page_
+### _Opening Page_
+
+You begin your job searching adventure by clicking job search button!
 
 ![readme](/public/images/index.gif)
 
 ### _See the job list and favorite the ones you like_
 
+You can see the job list on the left side and click on the one's you like to see the details.
+
 ![readme](/public/images/details-fav.gif)
 
 ### _If you want to see other jobs, you can search again_
 
+You want to search more? No worries!
+
 ![readme](/public/images/search-again.gif)
 
 ### _You can see the most searched and favorited jobs by the users_
+
+What jobs do people search for the most? Which jobs do they like the most? Curious? We have an answer for you!
 
 ![readme](/public/images/most-searched-fav.gif)
 
