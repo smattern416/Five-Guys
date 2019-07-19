@@ -12,42 +12,49 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
 
 
-  
+
   <!-- Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
     integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
     crossorigin="anonymous">
 
-    <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 
   <!-- Compressed JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
     integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
     crossorigin="anonymous"></script>
 
-<!-- FONT AWESOME -->
-<script src="https://kit.fontawesome.com/623c9b3b2b.js"></script>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/623c9b3b2b.js"></script>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-    <title>Results</title>
+  <title>Results</title>
 </head>
 
 <body class="background">
   <div class="top-bar" data-topbar role="navigation">
-         <img class="top-bar image" src="images/resultsheader.png">
+    <img class="top-bar image" src="images/resultsheader.png">
   </div>
 
-     
+
   <div class="grid-y medium-grid-frame">
     <div class="cell shrink header medium-cell-block-container">
       <div class="grid-x padding-gutters">
         <div id="searchTerms" class="cell medium-4">
-          <p>Search Parameters should show up here- maybe an option to adjust your search?</p>
+          <ul class="breadcrumbs">
+            <li id="breadcrumb-title"></li>
+            <li id="breadcrumb-location"></li>
+          </ul>
+          <hr>
+          <button class="button results expanded" data-open="searchModal" data-type="new-search" id="new-search">Search again!</button>
         </div>
         <div id="favorites" class="cell medium-6">
-            <button class="button results" data-open="searchModal" data-type="fav">Favorites</button>
-            <button class="button results" data-open="searchModal" data-type="search">Most Searched</button>
+          <p id="most-popular">What are the most popular jobs?</p>
+          <hr>
+          <button class="button results" data-type="fav" id="fav-results"><i class="fas fa-heart"></i> Favorites</button>
+          <button class="button results" data-type="search" id="most-searched"><i class="fas fa-search"></i> Most Searched</button>
         </div>
       </div>
     </div>
@@ -58,18 +65,33 @@
         </div>
         <div id="jobDetail" class="cell medium-6 medium-cell-block-y">
           <h2>Detailed Job Description</h2>
-          
         </div>
       </div>
     </div>
   </div>
+  <!-- MODAL -->
+
+  <div class="reveal" id="searchModal" data-reveal>
+
+    <!-- SEARCH FORM -->
+    <form action="results.html" method="GET" class="search-bar animated flipInX">
+      <label>Job Title
+        <input class="job-input" type="text" name="title" placeholder="ex. Front End Developer">
+      </label>
+
+      <label>Location
+        <input class="location-input" type="text" name="location" placeholder="ex. New York City, NY">
+      </label>
+      <input type="submit" id="search" class="button" value="Submit"></input>
+
+    </form>
+  </div>
 
   <footer>
     <div class="container">
-      Copyright &copy; 
+      Copyright &copy;
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
   <script src="js/results.js"></script>
 </body>
 
