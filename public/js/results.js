@@ -1,4 +1,4 @@
-function renderResult(data){
+function renderResult(data) {
     let limit = 10;
     if (data.length < 10) {
         limit = data.length;
@@ -34,25 +34,29 @@ function renderResult(data){
 $.get('api/jobs/search' + location.search).then(function (data) {
     renderResult(data);
 });
-$(document).on("click",".favHeart",function(){
-    $.post("/api/fav/"+$(this).val()).then(function(data){
+$(document).on("click", ".favHeart", function () {
+    $.post("/api/fav/" + $(this).val()).then(function (data) {
         console.log(data);
     });
 
     $(this).toggleClass("pink");
 
 });
-$(document).on("click",".results",function(){
+$(document).on("click", ".results", function () {
     switch ($(this).attr("data-type")) {
         case "fav":
-            $.get("/api/favorite").then(function (data) {
-                renderResult(data);  
+            $.get("/api/mostFav").then(function (data) {
+                //empty detail
+                $("#jobDetail").empty();
+                renderResult(data);
             });
-            
+
             break;
         case "search":
-            $.get("/api/mostsearched").then(function(data){
-                renderResult(data);  
+            $.get("/api/mostsearched").then(function (data) {
+                //empty detail
+                $("#jobDetail").empty();
+                renderResult(data);
             })
             break;
         default:
