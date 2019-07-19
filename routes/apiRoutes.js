@@ -114,8 +114,4 @@ module.exports = function (app) {
 
     });
   });
-  //give back all the states
-  app.get("/api/states", function (req, res) {
-    //
-  });
 };

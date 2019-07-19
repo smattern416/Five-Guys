@@ -14,7 +14,7 @@
   padding: 3%;
   border: solid 5px #d12cbb;
   background-color: white;
-  margin: 3%;
+  margin: 2.5%;
 }
 #jobDetail{
   padding: 3%;
@@ -24,11 +24,32 @@
   margin: 3%;
 }
 #searchTerms{
-  padding: 2%;
+  padding: 2% 2% 0 2%;
   background-color: white;
   border: solid 5px #3db14b;
   margin: 3%;
 }
+
+#new-search {
+  margin-bottom: 0;
+  background: #FF9900;
+  font-weight:bold;
+}
+
+#fav-results, #most-searched {
+  width:49%;
+  font-weight:bold;
+}
+
+#fav-results {
+  margin-right: 1%;
+  background:#f54029;
+}
+
+#most-popular {
+  font-size:1.5rem;
+}
+
 #height{
   padding-bottom: 50px;
 }

@@ -6,6 +6,9 @@ function renderResult(data) {
 
     //list div
     const resultsDiv = $("#results");
+    const breadcrumbTitle = $("#breadcrumb-title");
+    const breadcrumbLocation = $("#breadcrumb-location");
+    const searchModal = $("#searchModal");
 
     //empty list
     resultsDiv.empty();
@@ -24,16 +27,27 @@ function renderResult(data) {
             let newTitle = $("<h1>").text(data[i].title);
             let newCompanyName = $("<h2>").text(data[i].company);
             let newLocation = $("<p>").text(data[i].location);
+            let newApplication = $("<p>").html(data[i].how_to_apply);
+            let companyUrl = $("<a>").attr("href", data[i].company_url);
             $("#jobDetail").empty();
-            $("#jobDetail").append(newTitle, newCompanyName, newLocation, favButton, jobDetails);
+            $("#jobDetail").append(newTitle, newCompanyName, companyUrl, newLocation, favButton, jobDetails, newApplication);
         });
         jobDiv.append(jobTitle, companyName, location, divider);
         resultsDiv.append(jobDiv);
     }
+    let breadcrumbJobTitle = $("<a>").attr("href", searchModal)
+        .text(unescape(location.search.slice(1).split("&").filter(d => d.indexOf("title=") === 0)[0]
+        .replace("title=", "")))
+        .attr("data-open", "searchModal");
+    let breadcrumbJobLocation = $("<a>").attr("href", searchModal).text(data[0].location).attr("data-open", "searchModal");
+    breadcrumbTitle.empty().append(breadcrumbJobTitle);
+    breadcrumbLocation.empty().append(breadcrumbJobLocation);
 }
+
 $.get('api/jobs/search' + location.search).then(function (data) {
     renderResult(data);
 });
+
 $(document).on("click", ".favHeart", function () {
     $.post("/api/fav/" + $(this).val()).then(function (data) {
         console.log(data);
@@ -42,6 +56,11 @@ $(document).on("click", ".favHeart", function () {
     $(this).toggleClass("pink");
 
 });
+
+$(document).ready(function () {
+    $(document).foundation();
+})
+
 $(document).on("click", ".results", function () {
     switch ($(this).attr("data-type")) {
         case "fav":
@@ -58,6 +77,9 @@ $(document).on("click", ".results", function () {
                 $("#jobDetail").empty();
                 renderResult(data);
             })
+            break;
+        case "new-search": 
+            
             break;
         default:
             break;

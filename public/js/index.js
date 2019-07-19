@@ -7,6 +7,3 @@ $("#search").on("click", function (event) {
     window.location = "results.html?title=" + jobTitle + "&location=" + locationInput;
   }
 })
-
-// MODAL INITIALIZE
-// $(‘#element’).foundation(‘open’);
