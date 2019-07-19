@@ -1,6 +1,4 @@
-$.get('api/jobs/search' + location.search).then(function (data) {
-    console.log(data);
-
+function renderResult(data){
     let limit = 10;
     if (data.length < 10) {
         limit = data.length;
@@ -32,6 +30,9 @@ $.get('api/jobs/search' + location.search).then(function (data) {
         jobDiv.append(jobTitle, companyName, location, divider);
         resultsDiv.append(jobDiv);
     }
+}
+$.get('api/jobs/search' + location.search).then(function (data) {
+    renderResult(data);
 });
 $(document).on("click",".favHeart",function(){
     $.post("/api/fav/"+$(this).val()).then(function(data){
@@ -40,4 +41,21 @@ $(document).on("click",".favHeart",function(){
 
     $(this).toggleClass("pink");
 
+});
+$(document).on("click",".results",function(){
+    switch ($(this).attr("data-type")) {
+        case "fav":
+            $.get("/api/favorite").then(function (data) {
+                renderResult(data);  
+            });
+            
+            break;
+        case "search":
+            $.get("/api/mostsearched").then(function(data){
+                renderResult(data);  
+            })
+            break;
+        default:
+            break;
+    }
 });
